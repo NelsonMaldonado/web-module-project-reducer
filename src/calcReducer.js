@@ -1,0 +1,22 @@
+export const initialState = {
+  currentValue: 0,
+  memory: 0,
+}
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "ADD":
+      return { ...state, currentValue: state.currentValue + action.payload }
+    case "SUBTRACT":
+      return { ...state, currentValue: state.currentValue - action.payload }
+    case "MULTIPLY":
+      return { ...state, currentValue: state.currentValue * action.payload }
+    case "CLEAR":
+      return { ...state, currentValue: 0 }
+    case "ADD TO MEMORY":
+      return { ...state, memory: state.currentValue }
+    default:
+      return state
+  }
+}
+export default reducer
